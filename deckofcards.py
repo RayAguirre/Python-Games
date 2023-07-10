@@ -33,8 +33,9 @@ class Deck:
         return self.cards.pop()
 
 class Player():
-    def __init__(self):
+    def __init__(self, name):
         self.hand = []
+        self.name = str(name)
     
     def draw(self, num, deck):
         for i in range(num):
