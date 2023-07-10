@@ -10,7 +10,6 @@ class Card:
 class Deck:
     def __init__(self):
         self.cards = []
-        print("Created new deck.")
     
     def generate(self):
         for s in ["S", "C", "D", "H"]:
@@ -32,7 +31,7 @@ class Deck:
     def draw(self):
         return self.cards.pop()
 
-class Player():
+class Player:
     def __init__(self, name):
         self.hand = []
         self.name = str(name)
@@ -44,6 +43,11 @@ class Player():
     def showHand(self):
         for c in self.hand:
             c.show()
+    
+    def discardHand(self, discard):
+        for i in range(len(self.hand)):
+            element = self.hand.pop()
+            discard.cards.append(element)
 
 def TestDeck():
     my_deck = Deck()
